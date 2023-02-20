@@ -1,9 +1,10 @@
 //get
+import { axios } from 'axios';
 async function get(endpoint, params = '') {
   const apiUrl = `${endpoint}/${params}`;
   console.log(`%cGET 요청: ${apiUrl} `, 'color: #a25cd1;');
 
-  const res = await fetch(apiUrl, {
+  const res = await axios(apiUrl, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
@@ -27,7 +28,7 @@ async function post(endpoint, data) {
   console.log(`%cPOST 요청: ${apiUrl}`, 'color: #296aba;');
   console.log(`%cPOST 요청 데이터: ${bodyData}`, 'color: #296aba;');
 
-  const res = await fetch(apiUrl, {
+  const res = await axios(apiUrl, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -54,7 +55,7 @@ async function patch(endpoint, data) {
   console.log(`%cPATCH 요청: ${apiUrl}`, 'color: #059c4b;');
   console.log(`%cPATCH 요청 데이터: ${bodyData}`, 'color: #059c4b;');
 
-  const res = await fetch(apiUrl, {
+  const res = await axios(apiUrl, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json',
@@ -82,7 +83,7 @@ async function del(endpoint, params = '', data = {}) {
   console.log(`DELETE 요청 ${apiUrl}`);
   console.log(`DELETE 요청 데이터: ${bodyData}`);
 
-  const res = await fetch(apiUrl, {
+  const res = await axios(apiUrl, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
