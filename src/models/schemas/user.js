@@ -8,18 +8,6 @@ const UserSchema = new Schema(
     avartarUrl: { type: String, required: false },
     naverId: { type: String, required: false },
     kakaoId: { type: String, required: false },
-    // comments: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Comment',
-    //   },
-    // ],
-    // images: [
-    //   {
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Image',
-    //   },
-    // ],
   },
   {
     collection: 'user',

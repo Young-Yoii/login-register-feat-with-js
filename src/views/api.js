@@ -2,7 +2,6 @@
 import { axios } from 'axios';
 async function get(endpoint, params = '') {
   const apiUrl = `${endpoint}/${params}`;
-  console.log(`%cGET 요청: ${apiUrl} `, 'color: #a25cd1;');
 
   const res = await axios(apiUrl, {
     headers: {
@@ -25,8 +24,6 @@ async function get(endpoint, params = '') {
 async function post(endpoint, data) {
   const apiUrl = endpoint;
   const bodyData = JSON.stringify(data);
-  console.log(`%cPOST 요청: ${apiUrl}`, 'color: #296aba;');
-  console.log(`%cPOST 요청 데이터: ${bodyData}`, 'color: #296aba;');
 
   const res = await axios(apiUrl, {
     method: 'POST',
@@ -52,8 +49,6 @@ async function post(endpoint, data) {
 async function patch(endpoint, data) {
   const apiUrl = endpoint;
   const bodyData = JSON.stringify(data);
-  console.log(`%cPATCH 요청: ${apiUrl}`, 'color: #059c4b;');
-  console.log(`%cPATCH 요청 데이터: ${bodyData}`, 'color: #059c4b;');
 
   const res = await axios(apiUrl, {
     method: 'PATCH',
@@ -79,9 +74,6 @@ async function patch(endpoint, data) {
 async function del(endpoint, params = '', data = {}) {
   const apiUrl = `${endpoint}/${params}`;
   const bodyData = JSON.stringify(data);
-
-  console.log(`DELETE 요청 ${apiUrl}`);
-  console.log(`DELETE 요청 데이터: ${bodyData}`);
 
   const res = await axios(apiUrl, {
     method: 'DELETE',
